@@ -126,6 +126,10 @@ Visualization + Reports
 * **Orchestration:** LangGraph
 * **Vector Database:** Pinecone
 * **Core Concept:** RAG (Retrieval-Augmented Generation)
+  
+🚀 Live Demo
+
+Try ClauseAI here: Launch ClauseAI
 
 ---
 
