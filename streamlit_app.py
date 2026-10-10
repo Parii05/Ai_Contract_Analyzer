@@ -4,7 +4,7 @@ load_dotenv()
 import os
 import json
 import streamlit as st
-import PyPDF2
+from pypdf import PdfReader
 from docx import Document
 from groq import Groq
 from concurrent.futures import ThreadPoolExecutor, as_completed
