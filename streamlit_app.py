@@ -180,8 +180,8 @@ def extract_text(file, ext):
 
     if ext == "pdf":
         return "\n".join(
-            p.extract_text() or ""
-            for p in PyPDF2.PdfReader(file).pages
+            page.extract_text() or ""
+            for page in PdfReader(file).pages
         )
 
     if ext == "docx":
