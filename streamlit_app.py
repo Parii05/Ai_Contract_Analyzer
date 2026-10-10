@@ -26,6 +26,46 @@ st.set_page_config(
 )
 
 
+
+# --------------------------------------------------
+# PRESENTATION ONLY — UI THEME
+# --------------------------------------------------
+st.markdown("""
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root { --ink:#172033; --muted:#65718a; --brand:#6257e8; --brand2:#8b7cff; --line:#e5e9f2; --surface:#ffffff; }
+html, body, [class*="css"] { font-family:'DM Sans',sans-serif; }
+.stApp { background: radial-gradient(ellipse at 12% 0%, rgba(112,101,255,.10), transparent 32%), #f7f8fc; color:var(--ink); }
+[data-testid="stHeader"] { background:rgba(247,248,252,.82); }
+.block-container { max-width:1180px; padding-top:2.2rem; padding-bottom:3rem; }
+h1,h2,h3,h4 { font-family:'Manrope','DM Sans',sans-serif; letter-spacing:-.035em; color:#172033; }
+h1 { font-weight:800; font-size:clamp(2.5rem,5vw,4rem)!important; line-height:1.05!important; }
+h2 { font-weight:800; margin-top:1.4rem!important; }
+h3 { font-weight:700; }
+p, label, .stMarkdown, [data-testid="stCaptionContainer"] { color:#45516a; }
+div[data-testid="stFileUploader"] { background:#fff; border:1px dashed #b8bdf5; border-radius:18px; padding:1rem; }
+div[data-testid="stFileUploader"] section { border:0; }
+.stButton > button, .stDownloadButton > button { border-radius:12px; border:1px solid #deddfb; min-height:2.8rem; font-weight:700; transition:all .18s ease; }
+.stButton > button[kind="primary"], .stButton > button:hover, .stDownloadButton > button:hover { background:linear-gradient(120deg,#6257e8,#8275fa); color:white; border-color:transparent; box-shadow:0 8px 22px rgba(98,87,232,.18); transform:translateY(-1px); }
+.stTextInput input, .stTextArea textarea, .stSelectbox div[data-baseweb="select"] > div { border-radius:12px; border-color:#dfe4ef; background:#fff; }
+[data-testid="stMetric"] { background:#fff; border:1px solid var(--line); padding:1.1rem 1.2rem; border-radius:16px; box-shadow:0 4px 18px rgba(32,44,80,.035); }
+[data-testid="stMetricLabel"] { color:#69758c; font-weight:600; }
+[data-testid="stMetricValue"] { color:#292d50; font-family:'Manrope',sans-serif; font-weight:800; }
+div[data-testid="stTabs"] button { border-radius:10px 10px 0 0; font-weight:700; }
+div[data-testid="stTabs"] button[aria-selected="true"] { color:#6257e8; }
+div[data-testid="stAlert"] { border-radius:14px; }
+hr { border-color:#e4e8f1; margin:1.8rem 0; }
+div[data-testid="stExpander"] { background:#fff; border:1px solid var(--line); border-radius:14px; }
+footer { visibility:hidden; }
+@media (max-width: 768px) {
+ .block-container { padding:1.2rem 1rem 2rem; }
+ h1 { font-size:2.5rem!important; }
+}
+</style>
+""", unsafe_allow_html=True)
+
+
+
 # --------------------------------------------------
 # SESSION DEFAULTS
 # --------------------------------------------------
@@ -151,10 +191,15 @@ Rules:
 # UI — HERO
 # --------------------------------------------------
 st.markdown("""
-<h1 style='text-align:center;'>📄 ClauseAI</h1>
-<p style='text-align:center; font-size:1.1em;'>
-AI-powered Contract Intelligence Platform
-</p>
+<div style="text-align:center;padding:2.2rem 1rem 1.6rem;">
+  <div style="display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .8rem;border:1px solid #e1defe;border-radius:999px;background:#f0efff;color:#5d52d8;font-size:.82rem;font-weight:700;margin-bottom:1.2rem;">
+    <span>✦</span> AI-POWERED CONTRACT INTELLIGENCE
+  </div>
+  <h1 style="text-align:center;margin:0 0 .8rem;">Clause<span style="color:#6257e8;">AI</span></h1>
+  <p style="text-align:center;font-size:1.12rem;max-width:650px;margin:0 auto;color:#65718a;line-height:1.7;">
+    Understand the fine print. Surface risks. Make confident contract decisions.
+  </p>
+</div>
 """, unsafe_allow_html=True)
 
 st.divider()
@@ -163,14 +208,20 @@ st.divider()
 # --------------------------------------------------
 # UPLOAD
 # --------------------------------------------------
-st.markdown("## 🚀 Upload & Analyze Contract")
+st.markdown("""
+<div style="padding:1.5rem 1.6rem 1rem;background:linear-gradient(135deg,#fff 0%,#f4f3ff 100%);border:1px solid #e7e6fb;border-radius:20px 20px 0 0;margin-top:.5rem;">
+  <div style="font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#7066dd;font-weight:800;margin-bottom:.4rem;">GET STARTED</div>
+  <h2 style="margin:.1rem 0 .4rem;font-size:1.65rem;">Upload &amp; analyze your contract</h2>
+  <p style="margin:0;color:#65718a;">Add a PDF, Word document, or text file to generate a multi-agent risk review.</p>
+</div>
+""", unsafe_allow_html=True)
 
 uploaded_file = st.file_uploader(
-    "Upload PDF / DOCX / TXT",
+    "Choose a contract file · PDF, DOCX or TXT",
     ["pdf", "docx", "txt"]
 )
 
-analyze_btn = st.button("🔍 Analyze Contract", use_container_width=True)
+analyze_btn = st.button("✦  Analyze Contract", use_container_width=True, type="primary")
 
 
 # --------------------------------------------------
