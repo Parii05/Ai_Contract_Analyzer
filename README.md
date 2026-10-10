@@ -127,9 +127,13 @@ Visualization + Reports
 * **Vector Database:** Pinecone
 * **Core Concept:** RAG (Retrieval-Augmented Generation)
   
-🚀 Live Demo
+---
 
-Try ClauseAI here: Launch ClauseAI
+## 🚀 Live Demo
+
+Try ClauseAI here: **[Launch ClauseAI](https://aicontractanalyzer-gwgsp9bpylm4od4pbgsggg.streamlit.app/)**
+
+---
 
 ---
 
